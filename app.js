@@ -18,7 +18,9 @@ var campgroundsRoutes = require("./routes/campgrounds"),
     
 mongoose.Promise = global.Promise;
 //mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://Chelsea:123@ds137141.mlab.com:37141/yelpcamp-chelsea");
+//mongoose.connect("mongodb://Chelsea:123@ds137141.mlab.com:37141/yelpcamp-chelsea");
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(url);
 
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));
