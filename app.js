@@ -9,7 +9,6 @@ var express      = require("express"),
     User         = require("./models/user"),  
     methodOverride = require("method-override"),
     flash          = require("connect-flash"),
-    moment         = require("moment"),    
     seedDB       = require("./seeds");
 
 //REQURING ROUTES    

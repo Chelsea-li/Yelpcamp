@@ -2,8 +2,6 @@ var express = require("express");
 var router = express.Router();
 var Campground = require("../models/campground");
 var middleWare = require("../middleware");// should be ../middleware/index.js, but if require a directory, it will require the index file automaticly
-var moment = require("moment");
-var now = moment().format("ddd, hA");
 
 
 //===========================
@@ -52,7 +50,7 @@ router.get("/:id", function(req,res){
         if(err){
             console.log("something went wrong when findind id");
         } else {
-            res.render("campgrounds/show", {campground:foundCampground, now:now});
+            res.render("campgrounds/show", {campground:foundCampground});
         }
     });
 });
